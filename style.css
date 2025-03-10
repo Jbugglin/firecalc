@@ -1,0 +1,35 @@
+:root{}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100dvw;
+    height: 100dvh;
+}
+
+header, main, footer, section {
+    width: 100%;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    margin: 0.25rem;
+}
+
+#user-input {
+    height: 25vh;
+    border: 2px solid red;
+}
+
+#cord-result {
+    height: 75dvh;
+    border: 2px solid green;
+}
