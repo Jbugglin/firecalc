@@ -19,16 +19,27 @@
 
     <main>
         <section id="user-input">
-            <input type="number" name="stack-length" id="stack-length" placeholder="Stack Length" required>
+            <input type="number" name="stack-length" id="stack-length" placeholder="Stack Length" required min="0">
 
-            <input type="number" name="stack-height" id="stack-height" placeholder="Stack Height" required>
+            <input type="number" name="stack-height" id="stack-height" placeholder="Stack Height" required min="0">
 
-            <input type="number" name="stack-depth" id="stack-depth" placeholder="Stack Depth" required>
+            <input type="number" name="stack-depth" id="stack-depth" placeholder="Stack Depth" required min="0">
 
             <button onclick="getValues()">Calculate</button>
         </section>
         <section id="cord-result">
-
+            <div class="stack-result">
+                <h4>Estimated Cubic Feet:</h4>
+                <p><span id="cuFtResult"></span> cu-ft.</p>
+            </div>
+            <div class="stack-result">
+                <h4>Estimated % to full Cord:</h4>
+                <p><span id="fullCordResult"></span> % </p>
+            </div>
+            <div class="stack-result">
+                <h4>Estimated % to Face Cord:</h4>
+                <p><span id="faceCordResult"></span> %</p>
+            </div>
         </section>
     </main>  
     <script src="./fw-calc.js"></script>

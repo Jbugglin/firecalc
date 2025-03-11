@@ -1,5 +1,3 @@
-:root{}
-
 *, *::after, *::before {
     box-sizing: border-box;
     margin: 0;
@@ -20,16 +18,34 @@ header, main, footer, section {
     align-items: center;
 }
 
+main {
+    height: fit-content;
+}
+
 input {
     margin: 0.25rem;
 }
 
 #user-input {
-    height: 25vh;
-    border: 2px solid red;
+    height: fit-content;
+    margin: 2rem 0rem;
 }
 
 #cord-result {
-    height: 75dvh;
-    border: 2px solid green;
+    height: fit-content;
+    width: 300px;
+    margin: 2rem 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.stack-result {
+    width: 100%;
+    margin: 0.5rem 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
