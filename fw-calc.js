@@ -27,7 +27,7 @@ function compareFullCord(cubicFt) {
     } else if (fullCordCuFt < cubicFt) {
         fullCordComp = cubicFt - fullCordCuFt;
         fullCordDisp.innerHTML = fullCordComp;
-        numberOfCords(fullCordComp);
+        numberOfFullCords(fullCordComp);
     } else {
         console.log('= 128 cuft');
     }
@@ -44,25 +44,21 @@ function compareFaceCord(cubicFt) {
     } else if (faceCordCuFt < cubicFt) {
         faceCordComp = cubicFt - faceCordCuFt;
         faceCordDisp.innerHTML = faceCordComp;
-        numberOfCords(faceCordComp);
+        numberOfFaceCords(faceCordComp);
     } else {
         console.log('= 43 cuft');
     }
 }
 
-function numberOfCords(fullCordComp, faceCordComp) {
+function numberOfFullCords(fullCordComp) {
     let fullCordNum = document.getElementById('numOfFullCord');
-    let faceCordNum = document.getElementById('numOfFaceCord');
     let fullCord = 0;
-    let faceCord = 0;
     if (fullCordComp != 0) {  
         fullCord = fullCordComp / 128;
         fullCordNum.innerHTML = Math.round(fullCord);
-    }
+    }   
+}
 
-    if (faceCordComp != 0) {
-        faceCord = faceCordComp / 43;
-        console.log(faceCord)
-        faceCordNum.innerHTML = Math.round(faceCord);
-    }
+function numberOfFaceCords(faceCordComp) {
+    alert('enter face code');
 }
