@@ -9,8 +9,8 @@ function getValues() {
 //Calculates the cubic feet from the user input
 function calcCuFt(lengthValue, heightValue, depthValue) {
     let cubicFt = lengthValue * heightValue * depthValue;
-    let cuftSpan = document.getElementById('cuFtResult');
-    cuftSpan.innerHTML = cubicFt;
+    //let cuftSpan = document.getElementById('cuFtResult');
+    //cuftSpan.innerHTML = cubicFt;
     compareFullCord(cubicFt);
     compareFaceCord(cubicFt);
     numberOfCords(cubicFt);
@@ -19,27 +19,50 @@ function calcCuFt(lengthValue, heightValue, depthValue) {
 //Need to make a comparative function that compares the user input to the measurement of a full/face cord.
 function compareFullCord(cubicFt) {
     fullCordCuFt = 128;
-    let cordPercentage = 0;
+    let fullCordComp = 0;
     let fullCordDisp = document.getElementById('fullCordResult');
-    if (cubicFt > fullCordCuFt) {
-        cordPercentage = ((cubicFt - fullCordCuFt) / fullCordCuFt) * 100;
-        fullCordDisp.innerHTML = cordPercentage;
+    if (fullCordCuFt > cubicFt) {
+        fullCordComp = cubicFt;
+        fullCordDisp.innerHTML = fullCordComp;
+    } else if (fullCordCuFt < cubicFt) {
+        fullCordComp = cubicFt - fullCordCuFt;
+        fullCordDisp.innerHTML = fullCordComp;
+        numberOfCords(fullCordComp);
     } else {
-        cordPercentage = (cubicFt / fullCordCuFt) * 100;
-        fullCordDisp.innerHTML = cordPercentage;
+        console.log('= 128 cuft');
     }
 }
 
 //Face cord 1/3 of size as normal cord, 4ft x 8ft x ~16in (l x h x w)
 function compareFaceCord(cubicFt) {
-    let faceCordCuFt = 42.66;
-    let faceCordPercentage = 0;
+    let faceCordCuFt = 43;
+    let faceCordComp = 0;
     let faceCordDisp = document.getElementById('faceCordResult');
-    if (cubicFt > faceCordCuFt){
-        faceCordPercentage = ((cubicFt - faceCordCuFt) / faceCordCuFt) * 100;
-        faceCordDisp.innerHTML = faceCordPercentage;
+    if (faceCordCuFt > cubicFt) {
+        faceCordComp = cubicFt;
+        faceCordDisp.innerHTML = faceCordComp;
+    } else if (faceCordCuFt < cubicFt) {
+        faceCordComp = cubicFt - faceCordCuFt;
+        faceCordDisp.innerHTML = faceCordComp;
+        numberOfCords(faceCordComp);
     } else {
-        faceCordPercentage = (cubicFt / faceCordCuFt) * 100;
-        faceCordDisp.innerHTML = faceCordPercentage;
+        console.log('= 43 cuft');
+    }
+}
+
+function numberOfCords(fullCordComp, faceCordComp) {
+    let fullCordNum = document.getElementById('numOfFullCord');
+    let faceCordNum = document.getElementById('numOfFaceCord');
+    let fullCord = 0;
+    let faceCord = 0;
+    if (fullCordComp != 0) {  
+        fullCord = fullCordComp / 128;
+        fullCordNum.innerHTML = Math.round(fullCord);
+    }
+
+    if (faceCordComp != 0) {
+        faceCord = faceCordComp / 43;
+        console.log(faceCord)
+        faceCordNum.innerHTML = Math.round(faceCord);
     }
 }
