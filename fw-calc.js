@@ -56,9 +56,14 @@ function numberOfFullCords(fullCordComp) {
     if (fullCordComp != 0) {  
         fullCord = fullCordComp / 128;
         fullCordNum.innerHTML = Math.round(fullCord);
-    }   
+    }
 }
 
 function numberOfFaceCords(faceCordComp) {
-    alert('enter face code');
+    let faceCordNum = document.getElementById('numOfFaceCord');
+    let faceCord = 0;
+    if(faceCordComp != 0) {
+        faceCord = faceCordComp / 43;
+        faceCordNum.innerHTML = Math.round(faceCord);
+    }
 }
