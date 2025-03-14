@@ -9,61 +9,30 @@ function getValues() {
 //Calculates the cubic feet from the user input
 function calcCuFt(lengthValue, heightValue, depthValue) {
     let cubicFt = lengthValue * heightValue * depthValue;
-    //let cuftSpan = document.getElementById('cuFtResult');
-    //cuftSpan.innerHTML = cubicFt;
-    compareFullCord(cubicFt);
-    compareFaceCord(cubicFt);
-    numberOfCords(cubicFt);
+    let cuftSpan = document.getElementById('cuFtResult');
+    cuftSpan.innerHTML = cubicFt + " cu-ft";
+    fullComp(cubicFt);
+    faceComp(cubicFt);
 }
 
-//Need to make a comparative function that compares the user input to the measurement of a full/face cord.
-function compareFullCord(cubicFt) {
-    fullCordCuFt = 128;
-    let fullCordComp = 0;
-    let fullCordDisp = document.getElementById('fullCordResult');
-    if (fullCordCuFt > cubicFt) {
-        fullCordComp = cubicFt;
-        fullCordDisp.innerHTML = fullCordComp;
-    } else if (fullCordCuFt < cubicFt) {
-        fullCordComp = cubicFt - fullCordCuFt;
-        fullCordDisp.innerHTML = fullCordComp;
-        numberOfFullCords(fullCordComp);
-    } else {
-        console.log('= 128 cuft');
-    }
-}
-
-//Face cord 1/3 of size as normal cord, 4ft x 8ft x ~16in (l x h x w)
-function compareFaceCord(cubicFt) {
-    let faceCordCuFt = 43;
-    let faceCordComp = 0;
-    let faceCordDisp = document.getElementById('faceCordResult');
-    if (faceCordCuFt > cubicFt) {
-        faceCordComp = cubicFt;
-        faceCordDisp.innerHTML = faceCordComp;
-    } else if (faceCordCuFt < cubicFt) {
-        faceCordComp = cubicFt - faceCordCuFt;
-        faceCordDisp.innerHTML = faceCordComp;
-        numberOfFaceCords(faceCordComp);
-    } else {
-        console.log('= 43 cuft');
-    }
-}
-
-function numberOfFullCords(fullCordComp) {
-    let fullCordNum = document.getElementById('numOfFullCord');
+//Need a function to convert our entered cu-ft to full cord...
+function fullComp(cubicFt) {
     let fullCord = 0;
-    if (fullCordComp != 0) {  
-        fullCord = fullCordComp / 128;
-        fullCordNum.innerHTML = Math.round(fullCord);
+    let cordMeasure = 128;
+    let numFull = document.getElementById('fullCordResult');
+    if (cubicFt > 0) {
+        fullCord = cubicFt / cordMeasure;
     }
+    numFull.innerHTML = fullCord;
 }
 
-function numberOfFaceCords(faceCordComp) {
-    let faceCordNum = document.getElementById('numOfFaceCord');
+//Need a function to convert our entered cu-ft to face cord...
+function faceComp(cubicFt){
     let faceCord = 0;
-    if(faceCordComp != 0) {
-        faceCord = faceCordComp / 43;
-        faceCordNum.innerHTML = Math.round(faceCord);
+    let faceMeasure = 43;
+    let numFace = document.getElementById('faceCordResult');
+    if (cubicFt > 0) {
+        faceCord = cubicFt / faceMeasure;
     }
+    numFace.innerHTML = Math.round(faceCord * 100) / 100;
 }

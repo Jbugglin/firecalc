@@ -28,34 +28,30 @@
             <button onclick="getValues()">Calculate</button>
         </section>
         <section id="cord-result">
-            <!--
+            <!-- This displays total cu-ft entered..-->
             <div class="stack-result">
                 <h4>Estimated Cubic Feet:</h4>
-                <p><span id="cuFtResult"></span> cu-ft.</p>
+                <p><span id="cuFtResult">0</span></p>
             </div>
-            -->
-            <div class="fullCordSection">
+
+            <div class="full-cord-calc">
+                <!-- This will display the number of full cords if applicable -->
                 <div class="stack-result">
-                    <h4>Estimated cu-ft. to Full Cord:</h4>
-                    <p><span id="fullCordResult"></span> of 128 cu-ft.</p>
-                </div>
-                <div class="stack-result">
-                    <h4>Number of Full Cords:</h4>
-                    <p><span id="numOfFullCord"></span></p>
+                    <h4>Full Cords:</h4>
+                    <p><span id="fullCordResult">0</span></p>
                 </div>
             </div>
-            <div class="faceCordSection">
+
+            <div class="face-cord-calc">
+                <!-- This will display the number of face cords if applicable -->
                 <div class="stack-result">
-                    <h4>Estimated cu-ft. to Face Cord:</h4>
-                    <p><span id="faceCordResult"></span>  of 43 cu-ft.</p>
-                </div>
-                <div class="stack-result">
-                    <h4>Number of Face Cords</h4>
-                    <p><span id="numOfFaceCord"></span></p>
+                    <h4>Face Cords:</h4>
+                    <p><span id="faceCordResult">0</span></p>
                 </div>
             </div>
         </section>
     </main>  
+    <footer> Check out my Github: <a href="https://github.com/Jbugglin/firecalc">Jordan Bugglin</a></footer>
     <script src="./fw-calc.js"></script>
     <script src="https://kit.fontawesome.com/1e81cf774a.js" crossorigin="anonymous"></script>
 </body>

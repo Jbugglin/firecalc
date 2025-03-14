@@ -9,7 +9,7 @@ html, body {
     height: 100dvh;
 }
 
-header, main, footer, section {
+header, main, section {
     width: 100%;
     overflow-y: hidden;
     display: flex;
@@ -18,8 +18,17 @@ header, main, footer, section {
     align-items: center;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
 main {
     height: fit-content;
+    max-width: 350px;
 }
 
 input {
@@ -45,7 +54,31 @@ input {
     width: 100%;
     margin: 0.5rem 0rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    text-align: center;
+}
+
+.full-cord-calc {
+    width: 100%;
+}
+
+.face-cord-calc {
+    width: 100%;
+}
+
+span {
+    margin: 0rem 1rem;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    font-size: 0.75rem;
+}
+
+footer a {
+    text-decoration: none;
+    color: blue;
 }
