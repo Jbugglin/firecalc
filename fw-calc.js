@@ -23,7 +23,7 @@ function fullComp(cubicFt) {
     if (cubicFt > 0) {
         fullCord = cubicFt / cordMeasure;
     }
-    numFull.innerHTML = fullCord;
+    numFull.innerHTML = Math.round(fullCord * 100) / 100;
 }
 
 //Need a function to convert our entered cu-ft to face cord...
